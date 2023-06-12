@@ -12,31 +12,27 @@
             <div class="Inform">
                 <p>
                     <label>Город отправителя</label>
-                    <input name="CityFrom" class="form-control" @*pattern="[А-Яа-яЁё]"*@ required/>
+                    <input name="CityFrom" class="form-control" pattern="^[А-Яа-яЁё\s]+$" required/>
                 </p>
                 <p>
                     <label>Адрес отправителя</label>
-                    <input name="AddressFrom" class="form-control" required />
+                    <input name="AddressFrom" class="form-control" pattern="^[А-Яа-яЁё\s]+$" required />
                 </p>
                 <p>
                     <label>Город получателя</label>
-                    <input name="CityTo" class="form-control"  required />
+                    <input name="CityTo" class="form-control" pattern="^[А-Яа-яЁё\s]+$" required />
                 </p>
                 <p>
                     <label>Адресс получателя</label>
-                    <input name="AddressTo" class="form-control"  required />
+                    <input name="AddressTo" class="form-control" pattern="^[А-Яа-яЁё\s]+$" required />
                 </p>
                 <p>
-                    <label>Вес груза</label>
-                    <input name="Weight" class="form-control" required />
-                </p>
-                <p>
-                    <label>Дата забора груза</label>
-                    <input name="DateOfGet" class="form-control"  required />
+                    <label>Вес груза(кг)</label>
+                    <input name="Weight" class="form-control" pattern="^[0-9.]+$" required />
                 </p>
                 <p>
                     <label>Дата забора груза</label>
-                    <input name="DateOfGet" class="form-control" required />
+                    <input name="DateOfGet" class="form-control" pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}" required />
                 </p>
             </div>
         </div>

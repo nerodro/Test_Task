@@ -12,7 +12,6 @@ builder.Services.AddDbContext<ApplicationContext>(options => options.UseSqlServe
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-//builder.Services.AddScoped<IRepository, >();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

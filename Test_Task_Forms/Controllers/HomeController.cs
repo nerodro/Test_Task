@@ -7,21 +7,10 @@ namespace Test_Task_Forms.Controllers
 {
     public class HomeController : Controller
     {
-        IRepository _repo;
         ApplicationContext _context;
-        //public HomeController(ApplicationContext context)
-        //{
-        //    _context = context;
-        //}
-        //public HomeController(ApplicationContext context/*, IRepository repository*/)
-        //{
-        //    _context = context;
-        //    //_repo = repository;
-
-        //}
-        public HomeController(IRepository repository)
+        public HomeController(ApplicationContext context)
         {
-            _repo = repository;
+            _context = context;
         }
         [HttpGet]
         public void FindId(int? Id)
