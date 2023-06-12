@@ -1,0 +1,49 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Test_Task_Forms.Models.Form
+
+<fieldset>
+    <form asp-action="Details" asp-controller="Home" method="post" enctype="multipart/form-data">
+        <div class=containers>
+            <legend style="text-align:center;">Детали отправки</legend>
+            <div class="Inform">
+                <p>
+                    <label>Город отправителя:</label>
+                    @Html.DisplayFor(model =>model.CityFrom)
+                </p>
+                <p>
+                    <label>Адрес отправителя:</label>
+                    @Html.DisplayFor(model =>model.AddressFrom)
+                </p>
+                <p>
+                    <label>Город получателя:</label>
+                    @Html.DisplayFor(model =>model.CityTo)
+                </p>
+                <p>
+                    <label>Адресс получателя:</label>
+                    @Html.DisplayFor(model =>model.AddressTo)
+                </p>
+                <p>
+                    <label>Вес груза:</label>
+                    @Html.DisplayFor(model =>model.Weight)
+                </p>
+                <p>
+                    <label>Дата забора груза:</label>
+                    @Html.DisplayFor(model =>model.DateOfGet)
+                </p>
+                <p>
+                    <label>Трек-номер посылки:</label>
+                    @Html.DisplayFor(model =>model.TrackNumber)
+                    </>
+            </div>
+        </div>
+        <div class=containers>
+            <div class="Inform">
+                <a class="btn btn1" href="/Home/Index">Назад</a>
+            </div>
+        </div>
+    </form>
+</fieldset>

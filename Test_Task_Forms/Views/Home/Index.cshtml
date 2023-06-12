@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model Test_Task_Forms.Models.FormListViewModel
+<label class="control-label">Поиск: </label>
+<form method="get">
+<div class="row">
+        <div class="col-12 has-error">
+            <div class="input-group input-group-lg">
+<input name="TrackNumber" placeholder="Трек-номер посылки" class="form-control" value="@Context.Request.Query["TrackNumber"]" />
+                <button type="submit" value="Найти" class="btn find_btn">Найти посылку</button>
+    </div>
+    </div>
+    </div>
+</form>
+</br>
+<table class="table table-hover">
+    <thead class="">
+        <tr>
+            <th scope="col">Город отправки</th>
+            <th scope="col">Город назначения</th>
+            <th scope="col">Трек-номер посылки</th>
+            </tr>
+    </thead>
+    <tbody>
+        <tr>
+            @foreach (var form in Model.Form)
+            {
+                    <tr>
+                        <td>@form.CityFrom</td>
+                        <td>@form.CityTo</td>
+                        <td>@form.TrackNumber</td>
+                <td>@Html.ActionLink("Подробнее","Details","Home", new{Id = form.Id})</td>
+                    </tr>
+            }
+        </tr>
+    </tbody>
+</table>

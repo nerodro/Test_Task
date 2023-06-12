@@ -1,0 +1,54 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Test_Task_Forms.Models.Form
+
+<fieldset>
+    <form asp-action="Add_Form" asp-controller="Home" method="post" enctype="multipart/form-data">
+        <div class=containers>
+            <legend style="text-align:center;">Новая форма</legend>
+            <div class="Inform">
+                <p>
+                    <label>Город отправителя</label>
+                    <input name="CityFrom" class="form-control" @*pattern="[А-Яа-яЁё]"*@ required/>
+                </p>
+                <p>
+                    <label>Адрес отправителя</label>
+                    <input name="AddressFrom" class="form-control" required />
+                </p>
+                <p>
+                    <label>Город получателя</label>
+                    <input name="CityTo" class="form-control"  required />
+                </p>
+                <p>
+                    <label>Адресс получателя</label>
+                    <input name="AddressTo" class="form-control"  required />
+                </p>
+                <p>
+                    <label>Вес груза</label>
+                    <input name="Weight" class="form-control" required />
+                </p>
+                <p>
+                    <label>Дата забора груза</label>
+                    <input name="DateOfGet" class="form-control"  required />
+                </p>
+                <p>
+                    <label>Дата забора груза</label>
+                    <input name="DateOfGet" class="form-control" required />
+                </p>
+            </div>
+        </div>
+        <div class=containers>
+            <div class="Inform">
+                <p>
+                    <input type="submit" value="Создать новую форму" class="btn btn1" />
+                </p>
+            </div>
+            <div class="Inform">
+                <a class="btn btn1" href="/Home/Index">Назад</a>
+            </div>
+        </div>
+    </form>
+</fieldset>
